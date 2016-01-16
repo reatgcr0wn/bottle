@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  timestamp: 2016-01-16 18:31:19
+  anonymous: false
+  name: MyString
+  torn: false
+  text: MyText
+
+two:
+  timestamp: 2016-01-16 18:31:19
+  anonymous: false
+  name: MyString
+  torn: false
+  text: MyText
