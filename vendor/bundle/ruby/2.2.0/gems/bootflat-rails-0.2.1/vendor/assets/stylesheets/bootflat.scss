@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+/*
+ * Copyright 2013 FLATHEMES.
+ *
+ * Bootflat, v2.0.0
+ * A open source Flat UI KIT based on Twitter Bootstrap 3.1.0 css framework. 
+ * http://http://bootflat.github.io/
+ *
+ * By @flathemes
+ *
+ * Licensed under the MIT license. Please see LICENSE for more information.
+ *
+ */
+
+
+/*
+ * Include bootstrap
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import "bootflat/global";
+@import "bootflat/typography";
+@import "bootflat/button";
+@import "bootflat/button_group";
+@import "bootflat/label_badge";
+@import "bootflat/tooltip";
+@import "bootflat/popover";
+@import "bootflat/progress";
+@import "bootflat/breadcrumb";
+@import "bootflat/pagination";
+@import "bootflat/pager";
+@import "bootflat/form";
+@import "bootflat/checkbox_radio";
+@import "bootflat/alert";
+@import "bootflat/tab";
+@import "bootflat/pill";
+@import "bootflat/navbar";
+@import "bootflat/list";
+@import "bootflat/media_list";
+@import "bootflat/modal";
+@import "bootflat/well";
+@import "bootflat/thumbnail";
+@import "bootflat/jumbotron";
+@import "bootflat/panel";
+@import "bootflat/accordion";
+@import "bootflat/footer";
+@import "bootflat/dropdown";
+@import "bootflat/calendar";
+@import "bootflat/pricing";
+@import "bootflat/selecter";
+@import "bootflat/stepper";
+@import "bootflat/timeline";
+@import "bootflat/toggle";
