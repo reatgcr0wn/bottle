@@ -6,16 +6,16 @@ class User < ActiveRecord::Base
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :confirmable, :lockable, :timeoutable,
+        :lockable, :timeoutable,
          :omniauthable, omniauth_providers: [:twitter]
-
+        # :confirmable,
   def self.from_omniauth(auth)
     where(provider: auth['provider'], uid: auth['uid']).first_or_create do |user|
       user.provider = auth['provider']
       user.uid = auth['uid']
       user.username = auth['info']['nickname']
     end
-  end
+    end
 
   def self.new_with_session(params, session)
     if session['devise.user_attributes']
@@ -26,5 +26,9 @@ class User < ActiveRecord::Base
     else
       super
     end
+  end
+
+  def password_required?
+    super && provider.blank?
   end
 end
