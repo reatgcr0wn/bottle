@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Brand</a>
+      <a class="navbar-brand" href="#">bottle</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -16,14 +16,63 @@
 
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-        <strong><%= link_to current_user.username, home_show_path, class: "navbar-text"%></strong>
-        <%= link_to 'プロフィール変更', edit_user_registration_path, class: "navbar-text" %>
-        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete , class: "navbar-text"%>
-      <% else %>
-        <%= link_to 'サインアップ', new_user_registration_path , class: "navbar-text"%>
-        <%= link_to 'ログイン', new_user_session_path , class: "navbar-text"%>
-        <% end %>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+        <p class="navbar-text navbar-right"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete , class: "navbar-link"%>
+        </p>
+        <p class="navbar-text navbar-right"><%= link_to 'プロフィール変更', edit_user_registration_path, class: "navbar-link" %>
+          <p class="navbar-text navbar-right">Signed in as
+            <strong><%= link_to current_user.username, home_show_path, class: "navbar-link"%></strong>
+          </p>
+        <% else %>
+          <p class="navbar-text navbar-right"><%= link_to 'サインアップ', new_user_registration_path , class: "navbar-link"%>
+          </p>
+          <p class="navbar-text navbar-right"><%= link_to 'ログイン', new_user_session_path , class: "navbar-link"%>
+          </p>
+          <% end %>
+        </ul>
+
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+  <div class="jumbotron">
+    <div class="jumbotron-contents">
+      <div id="header-wrap">
+        <h1>bottle</h1>
+        <p>今、その思いを、流そう。</p>
+        <p>
+          <%= link_to 'Sign up', new_user_registration_path , class: "btn btn-primary btn-lg", role:"button"%>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <div class="caption">
+        <h3>Thumbnail label</h3>
+        <p>...</p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <div class="caption">
+        <h3>Thumbnail label</h3>
+        <p>...</p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <div class="caption">
+        <h3>Thumbnail label</h3>
+        <p>...</p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
+</div>

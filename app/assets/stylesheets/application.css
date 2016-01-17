@@ -12,6 +12,6 @@
  *
  *= require_tree .
  *= require_self
- *= bootstrap.min.css
- *= bootflat.min.css
+ *= bootstrap.css
+ *= bootflat.css
  */
