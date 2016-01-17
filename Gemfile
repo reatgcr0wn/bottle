@@ -47,3 +47,5 @@ end
 
 gem 'devise'
 gem 'omniauth-twitter'
+
+gem 'foundation-rails'
