@@ -27,7 +27,10 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     @message = Message.new(message_params)
-
+    @message.timestamp = DateTime.now
+    @message.user_id = current_user.id
+    @message.name = current_user.username
+    @message.torn = false
     respond_to do |format|
       if @message.save
         format.html { redirect_to @message, notice: 'Message was successfully created.' }
@@ -71,6 +74,6 @@ class MessagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def message_params
-      params.require(:message).permit(:timestamp, :anonymous, :name, :torn, :text)
+      params.require(:message).permit(:timestamp, :anonymous, :name, :torn, :text, :user_id)
     end
 end
