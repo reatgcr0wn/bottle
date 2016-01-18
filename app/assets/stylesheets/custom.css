@@ -1,3 +1,7 @@
+body{
+  padding-top: 70px;
+}
+
 .navbar {
   margin-bottom: 0px;
   border-radius: 0px;
@@ -46,4 +50,20 @@
 
 .headtext{
   text-align: center;
+}
+
+.navbar-right{
+  margin-right: 15px;
+}
+
+footer{
+  background-color: #3BAFDA;
+}
+
+.edit-submit{
+  margin-bottom: 2em;
+}
+
+.edit-form{
+  margin-bottom: 2em;
 }
