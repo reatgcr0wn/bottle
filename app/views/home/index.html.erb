@@ -2,9 +2,12 @@
   <div class="jumbotron-contents">
     <div id="header-wrap">
       <h1>bottle</h1>
-      <p>今、その思いを、流そう。</p>
-      <p>
+      <p>一度きりのメッセージを、流そう。</p>
+      <p><% if !user_signed_in? %>
         <%= link_to 'Sign up', new_user_registration_path , class: "btn btn-primary btn-lg", role:"button"%>
+        <% else %>
+        <%= link_to '新規投稿', new_message_path, class: "btn btn-primary btn-lg" %>
+        <% end %>
       </p>
     </div>
   </div>
@@ -14,6 +17,7 @@
     <h3>New Messages</h3>
   </div>
 </section>
+
 <section>
   <div class="container">
     <div class="row">
@@ -23,13 +27,12 @@
         <div class="thumbnail message-card">
           <div class="caption">
             <p class="time"><%= message.timestamp.to_s(:db) %></p>
-            <p><%= message.name %></p>
+            <p class="name"><%= message.name %></p>
             <p><%= simple_format(message.text) %></p>
             <% if user_signed_in? %>
-            <p>
+            <p class="buttons">
               <%= link_to 'RF' ,"/RF/#{message.id}", class: "btn btn-primary", role:"button"%>
               <%= link_to 'Tear' ,"/tears/#{message.id}", class: "btn btn-danger", role:"button"%>
-
             </p>
             <% end %>
           </div>

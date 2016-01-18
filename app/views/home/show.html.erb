@@ -48,27 +48,26 @@
   <div class="row">
     <hr>
   </div>
-
+<div class="row">
+  <div class="col-md-3">
+    <h4>あなたが流したメッセージ</h4>
+  </div>
+</div>
   <div class="row">
     <% @messages.each do |message| %>
-    <% if message.torn == false  %>
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail message-card">
         <div class="caption">
+          <% if message.torn == true  %>
+          <span class="badge">破棄</span>
+          <% end %>
           <p class="time"><%= message.timestamp.to_s(:db) %></p>
           <p><%= message.name %></p>
           <p><%= simple_format(message.text) %></p>
-          <% if user_signed_in? %>
-          <p>
-            <%= link_to 'RF' ,"/RF/#{message.id}", class: "btn btn-primary", role:"button"%>
-            <%= link_to 'Tear' ,"/tears/#{message.id}", class: "btn btn-danger", role:"button"%>
 
-          </p>
-          <% end %>
         </div>
       </div>
     </div>
-    <% end %>
     <% end %>
   </div>
 </div>

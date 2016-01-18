@@ -32,6 +32,9 @@
             <p class="navbar-text navbar-right">Signed in as
               <strong><%= link_to current_user.username, home_show_path, class: "navbar-link"%></strong>
             </p>
+            <p class="navbar-text navbar-right">
+              <%= link_to '新規投稿', new_message_path, class: "navbar-link" %>
+            </p>
           <% else %>
             <p class="navbar-text navbar-right"><%= link_to 'サインアップ', new_user_registration_path , class: "navbar-link"%>
             </p>
@@ -68,6 +71,7 @@
           </div>
         </div>
       </div>
-
+      
     </body>
+
   </html>
