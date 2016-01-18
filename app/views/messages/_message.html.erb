@@ -1,0 +1,12 @@
+<div class="">
+  <div class="">
+    <% @messages.each do |message| %>
+    <div class="message">
+      <div class="timestamp"><%= message.timestamp %></div>
+      <div class="name"><%= message.name %></div>
+      <div class="text"><%= message.text %></div>
+      <div class="show"><%= link_to 'Show', message %></div>
+    </div>
+    <% end %>
+  </div>
+</div>

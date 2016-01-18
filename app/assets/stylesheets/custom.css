@@ -12,8 +12,8 @@
   text-align: center;
   margin:0 auto;
   width:100%;
-  min-height: 500px;
-  max-height: 720px;
+  min-height: 600px;
+  max-height: 800px;
   background-image: url(/assets/bottle.png);
   background-position: center top;
   background-repeat: no-repeat;
@@ -22,13 +22,28 @@
 }
 
 .jumbotron-contents h1{
+  font-family: 'Lato', sans-serif;
   color:#fff;
   font-size: 8em;
 }
 .jumbotron-contents p{
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
   color:#fff;
 }
 
 #header-wrap{
   padding-top: 10em;
+}
+.message-card{
+  text-align: center;
+}
+
+.message-card .caption .time{
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+.headtext{
+  text-align: center;
 }
