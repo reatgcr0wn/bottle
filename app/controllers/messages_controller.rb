@@ -4,7 +4,9 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.all
+    # @messages = Message.all
+    @message = Message.new
+    @messages = Message.order("created_at DESC").limit(10)
   end
 
   # GET /messages/1

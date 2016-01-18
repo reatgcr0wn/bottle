@@ -47,3 +47,5 @@ end
 
 gem 'devise'
 gem 'omniauth-twitter'
+
+gem 'better_errors'
