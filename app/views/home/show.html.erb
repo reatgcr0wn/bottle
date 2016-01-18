@@ -1,2 +1,74 @@
-<h1>こんにちは、<%= current_user.username %>さん</h1>
-<p>ユーザー用ページです。</p>
+<div class="container">
+  <div class="row">
+    <h2><%= current_user.username %></h2>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">E-mail</h3>
+        </div>
+        <div class="panel-body">
+          <%= current_user.email %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Sign in count</h3>
+        </div>
+        <div class="panel-body">
+          <%= current_user.sign_in_count%>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Current sign in at</h3>
+        </div>
+        <div class="panel-body">
+            <%= current_user.current_sign_in_at%>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Panel title</h3>
+        </div>
+        <div class="panel-body">
+          Panel content
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <hr>
+  </div>
+
+  <div class="row">
+    <% @messages.each do |message| %>
+    <% if message.torn == false  %>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail message-card">
+        <div class="caption">
+          <p class="time"><%= message.timestamp.to_s(:db) %></p>
+          <p><%= message.name %></p>
+          <p><%= simple_format(message.text) %></p>
+          <% if user_signed_in? %>
+          <p>
+            <%= link_to 'RF' ,"/RF/#{message.id}", class: "btn btn-primary", role:"button"%>
+            <%= link_to 'Tear' ,"/tears/#{message.id}", class: "btn btn-danger", role:"button"%>
+
+          </p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+</div>
