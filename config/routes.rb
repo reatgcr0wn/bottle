@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'tears/:id' => 'tears#tear'
+
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
   root 'home#index'
   get 'home/show'
